@@ -11835,6 +11835,8 @@ static void atcommand_get_suggestions(map_session_data* sd, const char *name, bo
  */
 bool is_atcommand(const int32 fd, map_session_data* sd, const char* message, int32 type)
 {
+	
+	
 	char command[CHAT_SIZE_MAX], params[CHAT_SIZE_MAX];
 	char output[CHAT_SIZE_MAX];
 
@@ -11846,8 +11848,7 @@ bool is_atcommand(const int32 fd, map_session_data* sd, const char* message, int
 
 	bool is_atcommand = true; // false if it's a charcommand
 
-	nullpo_retr(false, sd);
-
+	nullpo_retr(false, sd); 
 	//Shouldn't happen
 	if ( !message || !*message )
 		return false;
@@ -11867,7 +11868,6 @@ bool is_atcommand(const int32 fd, map_session_data* sd, const char* message, int
 	//Should display as a normal message
 	if ( *message != atcommand_symbol && *message != charcommand_symbol )
 		return false;
-
 	// type value 0|2 = script|console invoked: bypass restrictions
 	if ( type == 1 || type == 3) {
 		//Commands are disabled on maps flagged as 'nocommand'
@@ -11917,7 +11917,6 @@ bool is_atcommand(const int32 fd, map_session_data* sd, const char* message, int
 		else
 			sprintf(atcmd_msg, "%s", command);
 	}
-
 	if (battle_config.idletime_option&IDLE_ATCOMMAND)
 		sd->idletime = last_tick;
 	if (battle_config.hom_idle_no_share && sd->hd && battle_config.idletime_hom_option&IDLE_ATCOMMAND)
@@ -11938,7 +11937,6 @@ bool is_atcommand(const int32 fd, map_session_data* sd, const char* message, int
 		clif_displaymessage(fd, output);
 		return true;
 	}
-
 	// @commands (script based)
 	if((type == 1 || type == 3) && atcmd_binding_count > 0) {
 		struct atcmd_binding_data *binding = get_atcommandbind_byname(command);
@@ -11978,6 +11976,7 @@ bool is_atcommand(const int32 fd, map_session_data* sd, const char* message, int
 	}
 
 	// type == 1 : player invoked
+	ShowMessage("is_atcommand: %d,%d\n",info->at_groups[sd->group->index],sd->group->index);  
 	if (type == 1) {
 		if ((is_atcommand && info->at_groups[sd->group->index] == 0) ||
 			(!is_atcommand && info->char_groups[sd->group->index] == 0) )
