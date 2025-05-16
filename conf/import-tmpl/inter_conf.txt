@@ -1,0 +1,17 @@
+login_server_db: ragnarok
+login_server_pw: La_009296
+
+ipban_db_db: ragnarok
+ipban_db_pw: La_009296
+
+char_server_db: ragnarok
+char_server_pw: La_009296
+
+map_server_db: ragnarok
+map_server_pw: La_009296
+
+log_db_db: ragnarok
+log_db_pw: La_009296
+
+web_server_db: ragnarok
+web_server_pw: La_009296

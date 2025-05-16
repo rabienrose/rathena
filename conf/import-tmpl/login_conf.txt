@@ -1,0 +1,2 @@
+new_account: yes
+password_min_length: 1
