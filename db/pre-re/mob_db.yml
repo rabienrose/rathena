@@ -133,10 +133,10 @@ Body:
     AegisName: PORING
     Name: Poring
     Level: 1
-    Hp: 50
+    Hp: 20
     BaseExp: 2
     JobExp: 1
-    Attack: 7
+    Attack: 3
     Attack2: 10
     MagicDefense: 5
     Int: 0

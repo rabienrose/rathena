@@ -3,5 +3,4 @@ prt_fild06,0,0	monster	Thief Bug Egg	1048,1
 prt_fild06,0,0	monster	Thief Bug	1051,1
 prt_fild06,0,0	monster	Pupa	1008,1
 prt_fild06,0,0	monster	Poring	1002,200
-prt_fild06,0,0	monster	Familiar	1005,1
 prt_fild06,0,0	monster	Green Plant	1080,1
